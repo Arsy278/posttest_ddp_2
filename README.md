@@ -4,4 +4,4 @@ Post Test 2 Praktikum Dasar-dasar Pemrograman. Program Toko Sepeda oleh Muhammad
 
 ![Screenshot 2023-10-09 222806](https://github.com/Arsy278/posttest_ddp_2/assets/144969459/f90f040f-0619-4559-950a-de085627b865)
 
-Screenshot terminal pada line 5 merupakan awal dari program. Jika user adalah admin, maka pilih 1. Jika user adalah pembeli, maka pilih 2.
+Screenshot terminal diatas merupakan awal dari program. Jika user adalah admin, maka pilih 1. Jika user adalah pembeli, maka pilih 2.
