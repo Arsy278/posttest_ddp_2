@@ -151,3 +151,5 @@ if opsi == "2":
         print(f"{'Terima Kasih Sudah Berbelanja !':^40}")
         print(f"{'-'*40:^40}")
         exit_program = True
+else:
+    print("Input yang anda masukkan salah.")
