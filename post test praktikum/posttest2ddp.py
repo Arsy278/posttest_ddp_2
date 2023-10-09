@@ -96,7 +96,7 @@ if opsi == "1":
 
         while True:
             exit_program = False
-            print("\nPilih opsi:")
+            print("\nPilih opsi Admin:")
             print("1. Tambah Item")
             print("2. Tampilkan Daftar Harga Sepeda")
             print("3. Perbarui Item")
@@ -118,38 +118,39 @@ if opsi == "1":
                 print(f"{'-'*40:^40}")
                 exit_program = True
                 break
-if opsi == "2":
-    def beli_item():
-        nomor_item = int(input("Nomor item yang ingin dibeli: "))
-        if nomor_item in barang:
-            data = barang[nomor_item]
-            print(f"Anda akan membeli {data['Nama Barang']} seharga Rp {data['Harga']:,.2f}".replace(",", "."))
-            jumlah = int(input("Jumlah yang ingin dibeli: "))
-            if jumlah <= data['Stok']:
-                data['Stok'] -= jumlah
-                keranjang_belanja.add_row([data['Nama Barang'], f" Rp {data['Harga']:,.2f}".replace(",", "."), jumlah])
-                print(f"{jumlah} {data['Nama Barang']} telah ditambahkan ke keranjang belanja.")
+while True:
+    exit_program = False
+    if opsi == "2":
+        def beli_item():
+            nomor_item = int(input("Nomor item yang ingin dibeli: "))
+            if nomor_item in barang:
+                data = barang[nomor_item]
+                print(f"Anda akan membeli {data['Nama Barang']} seharga Rp {data['Harga']:,.2f}".replace(",", "."))
+                jumlah = int(input("Jumlah yang ingin dibeli: "))
+                if jumlah <= data['Stok']:
+                    data['Stok'] -= jumlah
+                    keranjang_belanja.add_row([data['Nama Barang'], f" Rp {data['Harga']:,.2f}".replace(",", "."), jumlah])
+                    print(f"{jumlah} {data['Nama Barang']} telah ditambahkan ke keranjang belanja.")
+                else:
+                    print(f"Maaf, stok {data['Nama Barang']} tidak mencukupi.")
             else:
-                print(f"Maaf, stok {data['Nama Barang']} tidak mencukupi.")
-        else:
-            print("Nomor item tidak valid.")
-                
-    print("\nPilih opsi:")
-    print("1. Beli")
-    print("2. Lihat Keranjang")
-    print("3. Keluar")
-        
-    pilihan = input("\nPilih opsi (1/2/3): ")
-    if pilihan == "1":
-        print(daftar_barang)
-        beli_item()
-    elif pilihan == "2":
-        print("Keranjang Belanja: ")
-        print(keranjang_belanja)
-    elif pilihan == "3":
-        print(f"{'-'*40:^40}")
-        print(f"{'Terima Kasih Sudah Berbelanja !':^40}")
-        print(f"{'-'*40:^40}")
+                print("Nomor item tidak valid.")
+                    
+        print("\nPilih opsi:")
+        print("1. Beli")
+        print("2. Lihat Keranjang")
+        print("3. Keluar")
+            
+        pilihan = input("\nPilih opsi (1/2/3): ")
+        if pilihan == "1":
+            print(daftar_barang)
+            beli_item()
+        elif pilihan == "2":
+            print("Keranjang Belanja: ")
+            print(keranjang_belanja)
+        elif pilihan == "3":
+            print(f"{'-'*40:^40}")
+            print(f"{'Terima Kasih Sudah Berbelanja !':^40}")
+            print(f"{'-'*40:^40}")
+            break
         exit_program = True
-else:
-    print("Input yang anda masukkan salah.")
