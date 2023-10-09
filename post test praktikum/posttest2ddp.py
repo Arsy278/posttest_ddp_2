@@ -24,8 +24,7 @@ def tambah_item():
     harga = int(input("Masukkan harga barang: "))
     format = f"Rp {harga:,.2f}".replace(",",".")
     stok = int(input("Masukkan stok barang: "))
-
-    daftar_barang.title = "Daftar Sepeda"
+    
     tambah = len(barang) + 1
     barang[tambah] = {"nama_barang": nama_barang, "harga": format, "stok": stok}
 
